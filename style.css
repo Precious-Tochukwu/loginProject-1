@@ -6,8 +6,7 @@
 
 .wrapper {
     min-height: 100vh;
-    background: red;
-    /* background-image: url(./image/red-light-bg.jpg); */
+    background-image: url(./image/bg.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
