@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form>
+            <h1>Login</h1>
+            <div class="input-box">
+                <label>username:</label>
+                <input type="text" id="myUsername" autocomplete="off">
+            </div>
+            <div class="input-box">
+                <label>email:</label>
+                <input type="email" id="myEmail" required>
+            </div>
+            <div class="input-box">
+                <label>password:</label>
+                <input type="password" id="myPassword">
+            </div>
+            <input type="checkbox" onclick="myFunction()">
+            <label class="show">show password</label><br>
+            <button class="btn" onclick="validate()">Login</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
