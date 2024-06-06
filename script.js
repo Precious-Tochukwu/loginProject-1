@@ -13,7 +13,7 @@ function validate(){
     const myUsername = document.getElementById("myUsername");
     const myEmail = document.getElementById("myEmail");
 
-    if(myPassword.value.length >= 8 && myUsername.value.length > 8 && myEmail.value.length > 8 && myEmail.ariaRequired){
+    if(myPassword.value.length >= 8 && myUsername.value.length > 8 && myEmail.value.length > 8){
         // window.location.replace("page.html");
         window.location.href = "page.html";
         alert("login successful")
