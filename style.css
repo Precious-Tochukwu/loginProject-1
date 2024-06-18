@@ -95,4 +95,10 @@ form h1 {
 
 
 
+#error {
+    color: red;
+    display: none;
+}
+
+
 
