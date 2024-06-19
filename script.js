@@ -24,81 +24,66 @@ function validate(){
 
 
 
-// const usernameInput = document.getElementById("input");
-// const emailInput = document.getElementById("email");
-// const passwordInput = document.getElementById("password");
-// const submitBtn = document.getElementById("btn");
-// const errorMessage = document.getElementById("error");
 
 
-// errorMessage.style.display = "none";
+const forms = document.getElementById("forms");
+const input = document.getElementById("input");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
 
+forms.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-// submitBtn.addEventListener("click", () => {
-    
-//     if (usernameInput.value === "" && emailInput.value === "" && passwordInput.value === "") {
-        
-//         errorMessage.style.display = "block";
-//     } else {
-        
-//         errorMessage.style.display = "none";
-//     }
-// });
-
-
-
-
-const usernameInput = document.getElementById("input");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const submitBtn = document.getElementById("btn");
-const check = document.getElementById("check");
-const errorMessages = document.querySelectorAll("#error");
-
-
-submitBtn.addEventListener("click", function() {
-    let hasError = false;
-
-    
-    if (usernameInput.value === "") {
-        errorMessages[0].style.display = "block";
-        // hasError = true;
-    } else {
-        errorMessages.style.display = "none";
-    }
-
-  
-    if (emailInput.value === "") {
-        
-        errorMessages[1].style.display = "block";
-        // hasError = true;
-    } else {
-       
-        errorMessages.style.display = "none";
-    }
-
-  
-    if (passwordInput.value === "") {
-       
-        errorMessages[2].style.display = "block";
-        // hasError = true;
-    } else {
-       
-        errorMessages.style.display = "none";
-    }
-
-    
-    // if (!hasError) {
-    //     alert("Form submitted successfully!");
-        
-    // }
-});
-
-
-check.addEventListener("click", () => {
-    if (passwordInput.type === "password"){
-        passwordInput.type = "text";
-    }else{
-        passwordInput.type = "password";
-    }
+    checkInput();
+    checkEmail();
+    checkPassword();
 })
+
+function checkInput(){
+    if (input.value === ""){
+        setErrorFor(input, "please input your name");
+    }
+    else {
+        setSuccessFor(input)
+    }
+}
+
+function checkEmail(){
+    if (email.value === ""){
+        setErrorFor(email, "please enter a valid email");
+    }
+    else {
+        setSuccessFor(email)
+    }
+}
+
+function checkPassword(){
+    if (password.value === ""){
+        setErrorFor(password, "please input your name");
+    }
+
+    else if (password.value.length <= 5){
+        setErrorFor(password, "your password must be more than 5 characters long");
+    }
+
+    else {
+        setSuccessFor(password)
+    }
+}
+
+function setErrorFor(element, errorMessage) {
+    let parentInput = element.parentElement;
+    parentInput.classList.add("error");
+    let errorDiv = parentInput.querySelector(".errors");
+        errorDiv.innerHTML = errorMessage;
+    
+        parentInput.classList.remove("success");
+}
+
+function setSuccessFor(element){
+    let parentInput = element.parentElement;
+
+    parentInput.classList.add("success");
+
+    parentInput.classList.remove("error");
+}

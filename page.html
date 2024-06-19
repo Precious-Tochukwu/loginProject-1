@@ -8,27 +8,30 @@
 </head>
 <body>
     <h1>WELCOME TO YOUR NEW PAGE</h1>
-    <div>
-        <input id="input" type="text">
-        <p id="error">
-            error
-        </p>
-    </div>
-    <div>
-        <input id="email" type="email">
-        <p id="error">
-            error
-        </p>
-    </div>
-    <div>
-        <input id="password" type="password">
-        <p id="check">C</p>
-        <p id="error">
-            error
-        </p>
+    <div class="main">
+        <form action="" id="forms">
+            <div id="parentInput" >
+                <label>Name</label>
+                <input id="input" type="text">
+                <p class="errors">error</p>
+            </div>
+            <div id="parentInput">
+                <label>Email</label>
+                <input id="email" type="email">
+                <p class="errors">error</p>
+            </div>
+            <div id="parentInput">
+                <label>Password</label>
+                <input id="password" type="password">
+                <p class="errors">error</p>
+                <!-- <p id="check">check</p> -->
+            </div>
+            
+            <button id="btn" type="submit">submit</button>
+      </form>
     </div>
     
-    <button id="btn">submit</button>
+    
     
 
     <script src="script.js"></script>
