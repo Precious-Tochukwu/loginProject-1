@@ -15,7 +15,7 @@ function validate(){
 
     if(myPassword.value.length >= 8 && myUsername.value.length > 8 && myEmail.value.length > 8){
         // window.location.replace("page.html");
-        window.location.href = "page.html";
+        window.location.href = "page";
         alert("login successful")
     }else{
         alert("Please ensure your inputs are more than 8 characters long")
