@@ -68,6 +68,10 @@ form h1 {
    height: 6vh;
 }
 
+.check {
+    cursor: pointer;
+}
+
 .show {
     font-size: 15px;
     font-weight: 500;
